@@ -1,6 +1,7 @@
+const dot = require("dotenv").config();
 const config = {
     dev: {
-        username: "dava",
+        username: process.env.DB_ROOT_NAME,
         password: process.env.DB_PASSWORD,
         host: process.env.DB_HOST,
         database: process.env.DB_NAME,

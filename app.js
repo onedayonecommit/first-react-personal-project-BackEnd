@@ -4,14 +4,14 @@ const app = express();
 const cors = require("cors");
 const Session = require("./config/session");
 const session = require("express-session");
-const { sequelize } = require("./models/index")
-
+const { sequelize } = require("./models/index");
+const post = require('./router/post');
 const port = process.env.PORT
 
 app.use(express.json())
 app.use(cors())
 app.use(session(Session))
-
+app.use(post)
 sequelize.sync({ force: false })
     .then(() => {
         console.log("db connected");
@@ -23,3 +23,4 @@ sequelize.sync({ force: false })
 app.listen(port, () => {
     console.log(port)
 })
+
