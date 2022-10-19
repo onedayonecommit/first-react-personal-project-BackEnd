@@ -5,6 +5,7 @@ const mysql = require("mysql2");
 const { UserSignup } = require("../service/SignupUser");
 const { IdCheck, UserIdCheck } = require("../service/IdCheck");
 const { UserLogin } = require("../service/LoginUser");
+const { MainIdCheck } = require("../service/MainIdCheck");
 
 const temp = mysql.createConnection({
     password: process.env.DB_PASSWORD,
@@ -25,8 +26,12 @@ router.post("/signup", (req, res) => {
     UserSignup(IdInput, PwInput, req, res);
 })
 
-router.post("/Login", (req, res) => {
-    const { IdInput, PwInput } = req.body
-    UserLogin(IdInput, PwInput, res)
+router.post("/login", (req, res) => {
+    const { loginIdInput, loginPwInput } = req.body
+    UserLogin(loginIdInput, loginPwInput, res)
+})
+
+router.post("/main/id/check", (req, res) => {
+    MainIdCheck(req.body.MainEmail, req, res)
 })
 module.exports = router
