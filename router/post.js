@@ -27,11 +27,11 @@ router.post("/signup", (req, res) => {
 })
 
 router.post("/login", (req, res) => {
-    const { loginIdInput, loginPwInput } = req.body
-    UserLogin(loginIdInput, loginPwInput, res)
+    const { user_id, user_pw } = req.body
+    UserLogin(user_id, user_pw, res)
 })
 
 router.post("/main/id/check", (req, res) => {
-    MainIdCheck(req.body.MainEmail, req, res)
+    MainIdCheck(req.body.user_id, req, res)
 })
 module.exports = router
