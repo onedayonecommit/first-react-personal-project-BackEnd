@@ -6,6 +6,7 @@ const config = {
         host: process.env.DB_HOST,
         database: process.env.DB_NAME,
         dialect: "mysql",
+        timezone: "Asia/Seoul"
     },
 };
 

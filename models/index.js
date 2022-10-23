@@ -2,7 +2,8 @@ const dot = require("dotenv").config()
 const config = require("../config/config");
 const Sequelize = require("sequelize");
 const User = require("./user")
-let sequelize = new Sequelize(
+
+const sequelize = new Sequelize(
     config.dev.database,
     config.dev.username,
     config.dev.password,

@@ -9,7 +9,7 @@ class User extends Sequelize.Model {
                 autoIncrement: true,
                 type: Sequelize.INTEGER
             },
-            user_id: {
+            user_email: {
                 unique: true,
                 allowNull: false,
                 type: Sequelize.STRING(100)
@@ -17,6 +17,26 @@ class User extends Sequelize.Model {
             user_pw: {
                 allowNull: false,
                 type: Sequelize.STRING(80)
+            },
+            user_phone: {
+                allowNull: false,
+                defaultValue: "",
+                type: Sequelize.STRING(44)
+            },
+            user_nickname: {
+                allowNull: false,
+                defaultValue: "",
+                type: Sequelize.STRING(40)
+            },
+            user_ticket: {
+                allowNull: false,
+                defaultValue: 0,
+                type: Sequelize.INTEGER
+            },
+            user_refresh: {
+                allowNull: false,
+                defaultValue: "",
+                type: Sequelize.STRING(1000)
             }
         }, {
             sequelize,
