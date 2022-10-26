@@ -11,7 +11,7 @@ module.exports.UserSignup = async (user_email, user_pw, req, res) => {
                 res.send({ msg: "축하합니다.", status: true })
             }).catch((error) => {
                 res.send("실패")
-            }) : res.send("오류 발생")
+            }) : res.send("이미 있는 아이디 입니다. 아이디 찾기 또는 다른 아이디 이용바랍니다.")
         })
     } catch (error) {
         console.log(error)
