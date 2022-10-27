@@ -40,7 +40,7 @@ class User extends Sequelize.Model {
             }
         }, {
             sequelize,
-            underscored: true, // 대문자를 언더바로 카멜을 스네이크로
+            underscored: true,
             timestamps: true,
             modelName: "User",
             tableName: "users",

@@ -1,5 +1,6 @@
 const express = require('express');
-const { Movie } = require('../models');
+const { where } = require('sequelize');
+const { Movie, Freeboard } = require('../models');
 
 const router = express.Router()
 
@@ -33,4 +34,8 @@ router.get("/moviecreate", (req, res) => {
     })
 })
 
+
+router.get("/update", (req, res) => {
+    Freeboard.update({ title: "안녕 내 이름은 김경환" }, { where: { bno: 1 } })
+})
 module.exports = router
