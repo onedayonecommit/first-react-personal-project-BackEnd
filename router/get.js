@@ -35,7 +35,8 @@ router.get("/moviecreate", (req, res) => {
 })
 
 
-router.get("/update", (req, res) => {
-    Freeboard.update({ title: "안녕 내 이름은 김경환" }, { where: { bno: 1 } })
-})
+// router.get("/update", (req, res) => {
+//     Freeboard.update({ title: "안녕 내 이름은 김경환" }, { where: { bno: 1 } })
+// })
+
 module.exports = router
