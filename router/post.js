@@ -19,15 +19,7 @@ const { Freeboardsee } = require("../service/Updatawritesee");
 const { Freeboardupdatefinal } = require("../service/Updatewritefinal");
 const { changepw, changeemail, changephonenum, changenickname } = require("../service/ChangeEmail");
 
-// const temp = mysql.createConnection({
-//     password: process.env.DB_PASSWORD,
-//     host: process.env.DB_HOST,
-//     database: process.env.DB_NAME,
-//     user: process.env.DB_ROOT_NAME
-// })
 const router = express.Router();
-// router.use(express.json());
-// router.use(express.urlencoded({ extended: false }))
 
 router.post("/idcheck", (req, res) => {
     UserIdCheck(req.body.IdInput, req, res)
